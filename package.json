@@ -1,0 +1,65 @@
+{
+  "name": "angular2-lite-start",
+  "version": "1.0.0",
+  "description": "Angular2 lite start package",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\"",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server -c bs-config.json",
+    "postinstall": "typings install -AS core-js jasmine node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albatrosary/angular2-lite-start.git"
+  },
+  "keywords": [
+    "angular2",
+    "typescript"
+  ],
+  "author": "Fumio SAGAWA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/albatrosary/angular2-lite-start/issues"
+  },
+  "homepage": "https://github.com/albatrosary/angular2-lite-start#readme",
+  "dependencies": {
+    "@angular/common": "2.0.0-rc.4",
+    "@angular/compiler": "2.0.0-rc.4",
+    "@angular/core": "2.0.0-rc.4",
+    "@angular/forms": "0.2.0",
+    "@angular/http": "2.0.0-rc.4",
+    "@angular/platform-browser": "2.0.0-rc.4",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
+    "@angular/router": "3.0.0-beta.2",
+    "core-js": "^2.4.0",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "5.0.0-beta.6",
+    "store.js": "^1.0.4",
+    "systemjs": "0.19.31",
+    "zone.js": "^0.6.12"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "lite-server": "^2.2.0",
+    "typescript": "^1.8.10",
+    "typings": "^0.8.1",
+    "watchify": "^3.7.0"
+  },
+  "jspm": {
+    "name": "angular2-lite-start",
+    "main": "angular2-lite-start.js",
+    "directories": {
+      "packages": "node_modules"
+    },
+    "configFiles": {
+      "jspm": "bin/system-config.js",
+      "jspm:dev": "jspm.dev.js",
+      "jspm:browser": "jspm.browser.js",
+      "jspm:node": "jspm.node.js"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+  }
+}
