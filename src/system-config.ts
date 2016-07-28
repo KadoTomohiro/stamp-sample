@@ -10,8 +10,10 @@ System.packageWithIndex = true;
 let map = {
   'app':                        'app', // 'dist',
   'scripts/main':               'scripts/main.js',
+  'scripts/main.routes':        'scripts/main.routes.js',
   '@angular':                   'node_modules/@angular',
-  'rxjs':                       'node_modules/rxjs'
+  'rxjs':                       'node_modules/rxjs',
+  'store':                      'node_modules/store.js/store.js'
 };
 // packages tells the System loader how to load when no filename and/or no extension
 let packages = {
@@ -33,11 +35,11 @@ let ngPackageNames = [
 // Individual files (~300 requests):
 let packIndex = (pkgName) => {
   packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
-}
+};
 // Bundled (~40 requests):
 let packUmd = (pkgName) => {
   packages['@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
-}
+};
 // Most environments should use UMD; some (Karma) need the individual index files
 let setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
 
