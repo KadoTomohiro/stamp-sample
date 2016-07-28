@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
-//noinspection TypeScriptCheckImport
-import store from 'store';
+
+declare var store:any;
 
 @Component({
     selector: 'stamp',
@@ -11,8 +10,9 @@ import store from 'store';
 
 export class StampComponent {
     stamps: any[];
-
+    store: any;
     constructor(private route:ActivatedRoute) {
+        this.store = store;
         this.stamps = store.get('stamps') || [];
     }
 
